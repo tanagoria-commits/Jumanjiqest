@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Expedition Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="jungle-code.css">
+  <link rel="stylesheet" href="hidden-trail.css">
+  <link rel="stylesheet" href="quest-viewport.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header>
+      <a href="index.html" id="back-link">← Back to the vault</a>
+      <span id="progress">EXPEDITION VAULT</span>
+      <div class="audio-controls" id="audio-controls" hidden>
+        <button id="sound-toggle" type="button" aria-label="Mute sound">Sound on</button>
+        <input id="volume" type="range" min="0" max="100" value="35" aria-label="Sound volume">
+      </div>
+    </header>
+    <section class="game-panel">
+      <p class="kicker" id="kicker"></p>
+      <h1 id="title"></h1>
+      <p id="instructions"></p>
+      <div id="arena" class="arena"></div>
+      <div class="game-footer">
+        <strong id="score">Score: 0</strong>
+        <button id="action" type="button">Start</button>
+      </div>
+    </section>
+  </main>
+  <audio id="jungle-code-music" src="music2.mp3" preload="auto" loop></audio>
+  <audio id="hidden-trail-music" src="music3.mp3" preload="auto" loop></audio>
+  <script src="game.js"></script>
+  <script src="hidden-trail-data.js"></script>
+  <script src="hidden-trail.js"></script>
+</body>
+</html>

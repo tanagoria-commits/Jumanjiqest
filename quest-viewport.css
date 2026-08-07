@@ -1,0 +1,63 @@
+/* Shared one-screen layout for every quest scene. */
+html,body{width:100%;height:100%;overflow:hidden;overscroll-behavior:none}
+body:not(.hidden-trail-page):not(.jungle-code-page){min-height:100dvh}
+
+/* Shared game.html shell (Jungle Code and Hidden Trail). */
+.jungle-code-page .game-shell,.hidden-trail-page .game-shell{height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr);padding-bottom:8px}
+.jungle-code-page header,.hidden-trail-page header{height:44px;margin:4px 0}
+.jungle-code-page .game-panel,.hidden-trail-page .game-panel{min-height:0;height:100%;display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto;padding:clamp(10px,1.7vh,22px) clamp(12px,2.4vw,30px)}
+.jungle-code-page .game-panel>h1,.hidden-trail-page .game-panel>h1{font-size:clamp(30px,6vh,58px);margin:2px 0 4px}
+.jungle-code-page .game-panel>p,.hidden-trail-page .game-panel>p{margin:2px 0 5px;font-size:clamp(10px,1.6vh,14px)}
+.jungle-code-page .arena,.hidden-trail-page .arena{height:auto!important;min-height:0!important;margin:clamp(5px,1vh,12px) 0;overflow:hidden!important}
+.jungle-code-page .game-footer,.hidden-trail-page .game-footer{min-height:38px}
+
+/* Jungle Code compact composition. */
+.jungle-code-page .cipher-quest{height:100%;padding:clamp(5px,1vh,14px) clamp(7px,1.5vw,20px);display:grid;grid-template-columns:minmax(260px,.8fr) minmax(380px,1.3fr);grid-template-rows:auto auto auto minmax(0,1fr) auto;column-gap:18px;align-items:center}
+.jungle-code-page .cipher-status,.jungle-code-page .cipher-tablet{grid-column:1/-1}
+.jungle-code-page .cipher-tablet{margin:4px auto;padding:7px 18px}
+.jungle-code-page .encoded-message{margin:4px 0;min-height:0;font-size:clamp(15px,2.5vh,24px)}
+.jungle-code-page .letter-board{grid-column:2;grid-row:3;margin:3px auto;min-height:0;max-height:88px;overflow:hidden}
+.jungle-code-page .cipher-machine{grid-column:1;grid-row:3/6;width:min(35vh,300px);height:min(35vh,300px);margin:2px auto}
+.jungle-code-page .fixed-wheel-quest .inner-ring{inset:16%}
+.jungle-code-page .fixed-wheel-quest .shift-number{inset:36%}
+.jungle-code-page .ring-letter{transform:rotate(var(--angle)) translateY(calc(min(35vh,300px) * -.425));font-size:clamp(8px,1.4vh,12px)!important}
+.jungle-code-page .inner-ring .ring-letter{transform:rotate(var(--angle)) translateY(calc(min(35vh,300px) * -.26))}
+.jungle-code-page .ring-controls{grid-column:2;grid-row:4;margin:2px}
+.jungle-code-page .letter-keyboard{grid-column:2;grid-row:5;margin:4px auto;grid-template-columns:repeat(13,minmax(26px,38px));gap:3px}
+.jungle-code-page .letter-keyboard button{min-height:28px;padding:3px}
+.jungle-code-page .cipher-hint,.jungle-code-page .code-feedback{grid-column:2;margin:2px;font-size:9px}
+.jungle-code-page .decoded-scene,.jungle-code-page .all-runes,.jungle-code-page .rune-hall{max-height:100%;padding:10px;overflow:hidden}
+.jungle-code-page .decoded-scene>img{width:min(18vh,130px);height:min(18vh,130px);margin:8px auto}
+.jungle-code-page .stone-idol{min-height:0;height:min(33vh,230px);padding:10px 22px;margin:4px auto}.jungle-code-page .rune-slot{height:min(13vh,90px)}.jungle-code-page .rune-tray{min-height:70px}.jungle-code-page .hall-rune{width:min(11vh,82px);height:min(11vh,82px)}
+
+/* Hidden Trail compact composition. */
+.hidden-trail-page .trail-start,.hidden-trail-page .trail-difficulty,.hidden-trail-page .speaking-clearing,.hidden-trail-page .portal-scene{max-height:100%;padding:clamp(10px,3vh,30px) 15px;overflow:hidden}
+.hidden-trail-page .trail-start h2,.hidden-trail-page .trail-difficulty h2,.hidden-trail-page .speaking-clearing h2,.hidden-trail-page .portal-scene h2{font-size:clamp(27px,5vh,52px);margin:5px auto}
+.hidden-trail-page .trail-compass{font-size:clamp(34px,7vh,58px)}
+.hidden-trail-page .trail-levels{margin:12px auto;gap:10px}.hidden-trail-page .trail-levels button{min-height:min(16vh,115px)}
+.hidden-trail-page .trail-scene{height:100%;padding:8px 18px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto}
+.hidden-trail-page .trail-clue{margin:6px auto;padding:7px 18px}.hidden-trail-page .trail-clue h2{font-size:clamp(18px,3.2vh,30px);margin:3px 0}
+.hidden-trail-page .path-fork{min-height:0;height:100%;align-items:stretch}.hidden-trail-page .jungle-path{min-height:0;height:100%;max-height:290px;align-self:end}.hidden-trail-page .path-sign{padding:7px 5px}.hidden-trail-page .trail-feedback{margin:2px}
+.hidden-trail-page .cleared-path{height:min(24vh,150px)}
+.hidden-trail-page .hidden-trail-portal{height:min(42dvh,430px);max-height:calc(100dvh - 280px)}
+
+/* Lost Temple scenes. */
+.quest-shell{height:100dvh;min-height:0;overflow:hidden}
+.scene{height:100dvh;min-height:0;padding:clamp(76px,12vh,96px) 4vw clamp(8px,2vh,22px);overflow:hidden}
+.scene-card{max-height:calc(100dvh - 100px);padding:clamp(18px,5vh,44px);overflow:hidden}
+.intro-card h1{font-size:clamp(46px,12vh,96px);margin:clamp(6px,2vh,16px) 0}.intro-card p,.difficulty-card>p{font-size:clamp(13px,2.2vh,17px);margin:8px}.gold-button{margin-top:clamp(8px,2vh,20px);padding:10px 16px}
+.difficulty-card h2,.doors-message h2,.restored-card h2{font-size:clamp(35px,8vh,65px);margin:7px 0}.difficulty-grid{margin-top:clamp(10px,3vh,26px);gap:10px}.difficulty{min-height:0;height:min(27vh,180px);padding:clamp(12px,3vh,25px) 14px}.difficulty strong{margin:8px 0;font-size:clamp(23px,4vh,31px)}
+.trial-layout{height:calc(100dvh - 115px);min-height:0}.trial-progress{padding:clamp(15px,3vh,30px) 20px}.trial-progress h2{font-size:clamp(30px,6vh,43px);margin:5px 0 12px}.relic-silhouette{height:min(31vh,230px);margin-top:16px}.challenge-panel{padding:clamp(15px,3vh,32px) clamp(20px,4vw,42px);overflow:hidden}.challenge-content{padding-top:clamp(10px,2vh,24px)}.challenge-content h3{font-size:clamp(22px,4vh,36px);margin-bottom:clamp(10px,2vh,24px)}.option-list{gap:7px}.answer-option,.match-item{padding:clamp(8px,1.5vh,13px) 14px}.feedback{margin-top:8px;min-height:38px;padding:7px 12px}
+.chamber-scene.active{height:100dvh;min-height:0;padding-top:74px;padding-bottom:5px}.puzzle-room{min-height:0!important;height:auto!important}.puzzle-board{max-height:calc(100dvh - 190px)}
+.restored-card{max-height:calc(100dvh - 90px);padding:12px}.assembled-relic{height:min(48vh,360px);margin-bottom:5px}.restored-card p{margin:5px}
+
+@media(max-width:760px){
+ .jungle-code-page .cipher-quest{grid-template-columns:1fr 1fr;column-gap:8px}.jungle-code-page .cipher-machine{width:min(31vh,240px);height:min(31vh,240px)}.jungle-code-page .ring-letter{transform:rotate(var(--angle)) translateY(calc(min(31vh,240px) * -.42))}.jungle-code-page .inner-ring .ring-letter{transform:rotate(var(--angle)) translateY(calc(min(31vh,240px) * -.25))}.jungle-code-page .letter-keyboard{grid-template-columns:repeat(9,minmax(24px,1fr))}
+ .hidden-trail-page .trail-scene{padding:5px}.hidden-trail-page .path-fork{gap:3px}.hidden-trail-page .jungle-path{width:32%}
+ .trial-layout{grid-template-columns:180px 1fr}.trial-progress{padding:15px}.matching-board{gap:10px}
+}
+@media(max-height:680px){
+ .jungle-code-page header,.hidden-trail-page header{height:34px}.jungle-code-page .game-panel>p,.hidden-trail-page .game-panel>p{display:none}.jungle-code-page .game-panel>h1,.hidden-trail-page .game-panel>h1{font-size:28px}.jungle-code-page .cipher-machine{width:230px;height:230px}.jungle-code-page .ring-letter{transform:rotate(var(--angle)) translateY(-96px)}.jungle-code-page .inner-ring .ring-letter{transform:rotate(var(--angle)) translateY(-59px)}
+ .hidden-trail-page .path-sign{font-size:12px}.hidden-trail-page .trail-clue{padding:4px 12px}.hidden-trail-page .trail-top strong{font-size:17px}
+ .scene{padding-top:72px;padding-bottom:3px}.scene-card{padding:14px}.trial-layout{height:calc(100dvh - 80px)}.relic-silhouette{height:150px}.challenge-panel{padding:12px 24px}.assembled-relic{height:260px}
+}

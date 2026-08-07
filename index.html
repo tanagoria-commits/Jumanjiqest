@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expedition Vault</title>
+  <meta name="description" content="A showcase of adventure mini-games">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="main-redesign.css?v=6">
+</head>
+<body>
+  <div class="grain"></div>
+  <aside class="sidebar">
+    <a class="brand" href="#top" aria-label="Home">
+      <span class="brand-mark">✧</span>
+      <span>EXPEDITION<small>VAULT</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#legend"><span>⌖</span>Legend</a>
+      <a class="nav-link" href="#games"><span>◇</span>Quests</a>
+    </nav>
+    <blockquote>“Every path holds a story. Which one will you uncover?”<i>✦</i></blockquote>
+  </aside>
+
+  <main id="top">
+    <header class="topbar">
+      <div class="expedition-progress" aria-label="Expedition progress">
+        <div><small>EXPEDITION PROGRESS</small><strong id="header-progress-label">0 / 3 trials</strong></div>
+        <div class="progress-stars" id="progress-stars"><span>☆</span><span>☆</span><span>☆</span></div>
+      </div>
+      <div class="profile-wrap">
+        <button class="profile-button" id="profile-button" type="button" aria-expanded="false"><span class="profile-avatar">E</span><span><strong>Explorer</strong><small id="profile-rank">Jungle Newcomer</small></span><b>⌄</b></button>
+        <div class="profile-menu" id="profile-menu">
+          <button type="button" data-profile-action="name">Edit player name</button>
+          <button type="button" data-profile-action="progress">View progress</button>
+          <button type="button" data-profile-action="reset">Reset progress</button>
+          <label class="dev-toggle">Developer Mode <input id="developer-toggle" type="checkbox"><span></span></label>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="story">
+      <div class="hero-copy">
+        <span class="eyebrow">Archive of the unknown · Volume I</span>
+        <h1>Adventure <em>awaits</em></h1>
+        <p>Step into forgotten lands, decipher ancient signs, and uncover what the jungle has hidden for centuries.</p>
+        <button class="final-exit-button" id="final-exit-button" type="button" hidden><span>Leave the Jungle</span><small>All three trials are complete. The final gate is open.</small></button>
+      </div>
+      <div class="hero-compass-wrap" aria-label="Compass rose">
+        <svg class="hero-compass" viewBox="0 0 260 260" role="img">
+          <circle cx="130" cy="130" r="112"/><circle cx="130" cy="130" r="88"/><circle cx="130" cy="130" r="55"/>
+          <g class="minor-rays"><path d="M130 25l8 79-8 26-8-26Z"/><path d="M235 130l-79 8-26-8 26-8Z"/><path d="M130 235l-8-79 8-26 8 26Z"/><path d="M25 130l79-8 26 8-26 8Z"/></g>
+          <g class="diagonal-rays"><path d="M55 55l58 48 17 27-27-17Z"/><path d="M205 55l-48 58-27 17 17-27Z"/><path d="M205 205l-58-48-17-27 27 17Z"/><path d="M55 205l48-58 27-17-17 27Z"/></g>
+          <circle class="medallion" cx="130" cy="130" r="17"/><circle cx="130" cy="130" r="6"/>
+          <text x="130" y="14">N</text><text x="247" y="135">E</text><text x="130" y="255">S</text><text x="13" y="135">W</text>
+        </svg>
+        <small>EXPLORE · ENDURE · RETURN</small>
+      </div>
+    </section>
+
+    <section class="legend-section" id="legend">
+      <div class="legend-video">
+        <video controls playsinline preload="metadata" poster="assets/jungle.jpg">
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <span class="video-caption">THE HIDDEN JUNGLE · THE MAP HAS CHOSEN YOU</span>
+      </div>
+      <div class="legend-copy">
+        <span class="eyebrow">A story written by the jungle</span>
+        <h2>Legend of the Hidden Jungle</h2>
+        <div class="legend-text legend-full">
+          <p>They say that somewhere beyond the edge of the known world lies a jungle that cannot be found on any ordinary map.</p>
+          <p>For centuries, travelers have whispered of an ancient map hidden away and forgotten by time. Its ink never fades. Its paths never stay still. And when the map chooses a traveler, the world around them disappears.</p>
+          <p>You awaken beneath an endless emerald canopy, where ancient ruins sleep beneath tangled vines and unseen creatures move beyond the trees. Here, paths shift after sunset, stone guardians remember forgotten names, and the jungle allows no one to leave without proving themselves worthy.</p>
+          <p>The legends speak of three trials.</p>
+          <p>You must enter the <strong>Lost Temple</strong> and recover its shattered relic. You must decipher the living runes of the <strong>Jungle Code</strong>. And you must cross the <strong>Hidden Trail</strong>, where one wrong step may cause the path itself to vanish.</p>
+          <p>Only a traveler who completes all three trials can awaken the final gate and find the way home. But the jungle remembers those who fail. Some say their footsteps can still be heard among the trees.</p>
+          <p>And now, traveler, the map has chosen you.</p>
+        </div>
+        <div class="legend-text legend-short">
+          <p>They say that beyond the edge of the known world lies a jungle that appears on no ordinary map. Its paths never stay still, and when the map chooses a traveler, the world around them disappears.</p>
+          <p>You awaken beneath an endless emerald canopy, where ancient ruins sleep beneath tangled vines and the jungle allows no one to leave without proving themselves worthy.</p>
+          <p>Three trials stand between you and the way home: recover the shattered relic of the <strong>Lost Temple</strong>, decipher the living runes of the <strong>Jungle Code</strong>, and survive the <strong>Hidden Trail</strong>.</p>
+          <p>Complete all three trials, and the final gate will awaken. Fail, and the jungle will remember your name.</p>
+          <p>Now, traveler, the map has chosen you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="discover-section dev-only" id="discover">
+      <div class="section-title"><span>Cartographer’s journal</span><h2>Discover the Lost Realm</h2></div>
+      <div class="map-shell image-map">
+        <img class="map-art" src="1.png" alt="Ancient illustrated map of the Lost Realm">
+        <a class="map-hotspot temple-hotspot" href="lost-temple.html" aria-label="Enter Lost Temple"><span>Lost Temple</span></a>
+        <a class="map-hotspot code-hotspot" href="game.html?game=code" aria-label="Enter Jungle Code"><span>Jungle Code</span></a>
+        <a class="map-hotspot trail-hotspot" href="game.html?game=trail" aria-label="Enter Hidden Trail"><span>Hidden Trail</span></a>
+      </div>
+    </section>
+
+    <section class="achievements-section dev-only" id="achievements">
+      <div class="section-title"><span>Explorer’s record</span><h2>Achievements</h2></div>
+      <div class="achievement-summary"><div class="rank-medal">✦</div><div><small>CURRENT RANK</small><strong id="rank">Newcomer</strong></div><div class="progress-wrap"><span><b id="completed-count">0</b> of 3 trials completed</span><div class="progress-track"><i id="progress-bar"></i></div></div></div>
+      <div class="achievement-grid">
+        <article class="achievement" data-achievement="temple"><span class="achievement-icon">◈</span><div><small>LOST TEMPLE</small><h3>Relic Hunter</h3><p>Recover every relic before the ancient gates close.</p></div><b class="achievement-state">LOCKED</b></article>
+        <article class="achievement" data-achievement="code"><span class="achievement-icon">⌘</span><div><small>JUNGLE CODE</small><h3>Rune Whisperer</h3><p>Decipher all four sequences of the living jungle code.</p></div><b class="achievement-state">LOCKED</b></article>
+        <article class="achievement" data-achievement="trail"><span class="achievement-icon">◆</span><div><small>HIDDEN TRAIL</small><h3>Pathfinder</h3><p>Follow five language clues and reveal the portal hidden beyond the fog.</p></div><b class="achievement-state">LOCKED</b></article>
+      </div>
+    </section>
+
+    <section class="catalog" id="games">
+      <div class="section-title"><span>Three routes</span><h2>Choose your expedition</h2></div>
+      <div class="cards" id="cards">
+        <article class="game-card" data-search="lost temple ruins artifacts">
+          <a class="card-image" href="lost-temple.html" aria-label="Open Lost Temple game">
+            <img src="assets/temple.jpg" alt="Ancient temple surrounded by greenery">
+            <span class="card-number">01</span><span class="play">▶</span>
+          </a>
+          <div class="card-body"><span class="tag">Language quest</span><h3>Lost Temple</h3><p>Pass five trials, enter the relic chamber and restore the ancient artifact.</p><a href="lost-temple.html">Start quest <span>→</span></a></div>
+        </article>
+
+        <article class="game-card featured" data-search="jungle code puzzle symbols cipher">
+          <a class="card-image" href="game.html?game=code" aria-label="Open Jungle Code game">
+            <img src="assets/ruins.jpg" alt="Overgrown ruins deep in the jungle">
+            <span class="card-number">02</span><span class="play">▶</span>
+          </a>
+          <div class="card-body"><span class="tag">Ancient cipher</span><h3>Jungle Code</h3><p>Memorize the rune sequence and repeat it without a single mistake.</p><a href="game.html?game=code">Start game <span>→</span></a></div>
+        </article>
+
+        <article class="game-card" data-search="hidden trail waterfall path maze">
+          <a class="card-image" href="game.html?game=trail" aria-label="Open Hidden Trail game">
+            <img src="assets/waterfall.jpg" alt="Mysterious waterfall in a tropical forest">
+            <span class="card-number">03</span><span class="play">▶</span>
+          </a>
+          <div class="card-body"><span class="tag">The Path of Clues</span><h3>Hidden Trail</h3><p>Follow English clues through five branching jungle paths and reveal the ancient portal.</p><a href="game.html?game=trail">Start game <span>→</span></a></div>
+        </article>
+      </div>
+      <p class="empty" id="empty">No such expedition has been added to the archive yet.</p>
+    </section>
+  </main>
+  <div class="confirm-modal" id="reset-modal" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+    <div><span class="eyebrow">Irreversible action</span><h2 id="reset-title">Reset all progress?</h2><p>All relics and achievements will be lost. Music settings will be preserved.</p><div><button type="button" data-reset="cancel">Cancel</button><button type="button" class="danger" data-reset="confirm">Reset everything</button></div></div>
+  </div>
+  <div class="confirm-modal name-modal" id="name-modal" role="dialog" aria-modal="true" aria-labelledby="name-title">
+    <form id="player-name-form"><span class="eyebrow">Explorer profile</span><h2 id="name-title">Choose your name</h2><label for="player-name-input">Explorer name</label><input id="player-name-input" maxlength="24" autocomplete="nickname"><p class="name-error" id="name-error" role="alert"></p><div><button type="button" data-name-action="cancel">Cancel</button><button type="submit">Save name</button></div></form>
+  </div>
+  <div class="final-video-modal" id="final-video-modal" role="dialog" aria-modal="true" aria-labelledby="final-video-title" hidden>
+    <button class="final-video-close" id="final-video-close" type="button">Close</button>
+    <div><h2 id="final-video-title">The Way Home</h2><video id="final-video" controls playsinline preload="metadata"><source src="video1.mp4" type="video/mp4">Your browser does not support embedded video.</video></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <aside class="dev-panel" id="dev-panel"><header><strong>DEV MODE</strong><button type="button" id="dev-close">×</button></header><a href="#top">Main Hero</a><a href="#legend">Legend</a><a href="#games">Quest Cards</a><a href="lost-temple.html?scene=start">Temple: Start</a><a href="lost-temple.html?scene=difficulty">Temple: Difficulty</a><a href="lost-temple.html?scene=trial">Temple: Trials</a><a href="lost-temple.html?scene=doors">Temple: Doors</a><a href="lost-temple.html?scene=chamber">Temple: Puzzle</a><a href="lost-temple.html?scene=restored">Temple: Awakened</a><a href="game.html?game=code">Jungle Code</a><a href="game.html?game=trail">Hidden Trail</a><a href="#discover">Discover</a><a href="#achievements">Achievements</a></aside>
+  <script src="script.js?v=6"></script>
+</body>
+</html>

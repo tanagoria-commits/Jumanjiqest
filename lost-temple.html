@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lost Temple — Expedition Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lost-temple.css?v=7">
+  <link rel="stylesheet" href="lost-temple-fixes.css?v=7">
+  <link rel="stylesheet" href="quest-viewport.css">
+</head>
+<body>
+  <div class="quest-grain"></div>
+  <header class="quest-header">
+    <a href="index.html#games">← Quest map</a>
+    <div class="quest-brand">EXPEDITION <span>VAULT</span></div>
+    <div class="audio-controls"><button id="sound-toggle" type="button" aria-label="Toggle quest music">♫</button><input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.55" aria-label="Music volume"><span id="volume-label">55%</span></div>
+  </header>
+
+  <main id="quest" class="quest-shell">
+    <section class="scene start-scene active" data-scene="start">
+      <div class="scene-card intro-card">
+        <span class="kicker">Trial I · The Broken Relic</span>
+        <h1>Lost Temple</h1>
+        <div class="divider">◆</div>
+        <p>The relic was shattered into five pieces and hidden inside the Lost Temple.<br>Pass the trials, enter the relic chamber and recover all five fragments.</p>
+        <button class="gold-button" id="enter-temple">Enter the Temple <span>→</span></button>
+        <button class="text-button hidden" id="resume-quest">Play Again</button>
+      </div>
+    </section>
+
+    <section class="scene difficulty-scene" data-scene="difficulty">
+      <div class="scene-card difficulty-card">
+        <span class="kicker">The temple measures every traveler</span>
+        <h2>Choose Your Path</h2>
+        <p>Your choice determines the language of all five trials.</p>
+        <div class="difficulty-grid">
+          <button class="difficulty" data-level="easy"><small>ESL A2–B1</small><strong>Easy</strong><span>Familiar words and clear clues</span></button>
+          <button class="difficulty" data-level="medium"><small>ESL B1–B2</small><strong>Medium</strong><span>Idioms, context and close meanings</span></button>
+          <button class="difficulty" data-level="hard"><small>ESL B2–C1</small><strong>Hard</strong><span>Nuance, advanced idioms and traps</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene trial-scene" data-scene="trial">
+      <div class="trial-layout">
+        <aside class="trial-progress">
+          <span class="kicker">Temple passage</span>
+          <h2 id="trial-title">Trial 1</h2>
+          <div class="trial-stones" id="trial-stones" aria-label="Trial progress"></div>
+          <p id="difficulty-label">Medium · ESL B1–B2</p>
+          <div class="relic-silhouette">◇<small>RELIC CHAMBER<br>SEALED</small></div>
+        </aside>
+        <div class="challenge-panel">
+          <div class="challenge-head"><span id="challenge-type">Choose the Meaning</span><small id="question-count">Question pool: 1 / 20</small></div>
+          <div id="challenge-content" class="challenge-content"></div>
+          <div id="feedback" class="feedback" role="status"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene doors-scene" data-scene="doors">
+      <div class="stone-doors"><div class="door left-door"></div><div class="door-light"></div><div class="door right-door"></div></div>
+      <div class="doors-message"><span class="kicker">All five seals are broken</span><h2>The Relic Chamber<br>is Open</h2><button class="gold-button" id="enter-chamber">Enter the Chamber <span>→</span></button></div>
+    </section>
+
+    <section class="scene chamber-scene" data-scene="chamber">
+      <div class="chamber-hud"><div><span class="kicker">Relic chamber</span><h2>Restore the Ancient Relic</h2><p>The relic has been broken into five pieces. Place every fragment in its correct position.</p></div><div class="fragment-progress"><span id="fragment-count">Relic puzzle: 0 / 5</span><div id="fragment-slots"></div></div></div>
+      <div class="puzzle-room" id="puzzle-room">
+        <div class="puzzle-board" id="puzzle-board" aria-label="Relic puzzle assembly area">
+          <img src="assets/relic-transparent.png" alt="Golden silhouette of the completed relic" class="puzzle-ghost">
+          <div id="puzzle-targets"></div>
+        </div>
+        <div class="puzzle-pieces" id="puzzle-pieces" aria-label="Movable relic fragments"></div>
+        <div class="puzzle-message" id="puzzle-message" role="status">Drag each fragment onto the relic silhouette.</div>
+      </div>
+    </section>
+
+    <section class="scene restored-scene" data-scene="restored">
+      <div class="restored-card">
+        <span class="kicker">The five become one</span>
+        <div class="assembled-relic"><img src="assets/relic-transparent.png" alt="Restored Lost Temple relic"></div>
+        <h2>Relic Awakened</h2>
+        <p>The Lost Temple has accepted you. The jungle path is open once more.</p>
+        <small class="returning-label">Returning to the jungle…</small>
+        <a class="gold-button" href="index.html#games">Return to the Jungle <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <audio id="quest-music" src="music1.mp3" loop preload="auto"></audio>
+  <script src="lost-temple-data.js?v=7"></script>
+  <script src="lost-temple.js?v=7"></script>
+</body>
+</html>

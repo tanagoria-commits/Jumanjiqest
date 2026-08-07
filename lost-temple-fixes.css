@@ -1,0 +1,31 @@
+/* Final puzzle overrides. This file is intentionally loaded after lost-temple.css. */
+.puzzle-board.accepting {
+  border-color: #f5cc72;
+  box-shadow: 0 0 55px rgba(236, 179, 72, .55), inset 0 0 42px rgba(215, 166, 76, .2);
+}
+
+.puzzle-piece.placed,
+.puzzle-piece.placed:hover,
+.puzzle-piece.placed:focus {
+  background-color: transparent;
+  background-blend-mode: normal;
+  outline: 1px solid rgba(121, 225, 83, .28);
+  outline-offset: -1px;
+  filter:
+    saturate(1.35)
+    brightness(1.08)
+    drop-shadow(0 0 7px rgba(116, 239, 82, .7));
+  animation: fragmentLockedFinal .4s ease-out;
+  cursor: default;
+}
+
+@keyframes fragmentLockedFinal {
+  0% {
+    filter: brightness(1.35) drop-shadow(0 0 13px rgba(142, 246, 102, .8));
+    transform: scale(1.025);
+  }
+  100% {
+    transform: none;
+  }
+}
+.audio-controls{display:flex;align-items:center;gap:8px;color:#b9a46f}.audio-controls button{width:28px;height:28px;border:1px solid rgba(215,166,76,.35);border-radius:50%;background:rgba(215,166,76,.06);color:#e0bd74;cursor:pointer}.audio-controls input{width:100px;accent-color:#d6a64e}.audio-controls span{min-width:30px;font-size:8px}.returning-label{display:block;margin-top:13px;color:#91a17f;letter-spacing:.15em;font-size:8px;text-transform:uppercase}.restored-scene.active .assembled-relic{animation:relicAwaken 2.4s ease-in-out infinite alternate}@keyframes relicAwaken{from{filter:drop-shadow(0 0 8px rgba(215,166,76,.45));transform:scale(.98)}to{filter:drop-shadow(0 0 34px rgba(100,241,92,.72));transform:scale(1.035)}}
